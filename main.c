@@ -232,12 +232,13 @@ int main()
         }
 
         int first = 0;
-        int last = size - 1;
+        int last = size;
         int middle = (first+last)/2;
         char search;
         printf("\nEnter the Number to find:\n");
         scanf("%s", &search);
         binarySearch(arr,first, last, middle, search);
+
         printf("\nDone :D ");
 
     }else if(num == 2){
@@ -262,7 +263,6 @@ int main()
             printf("\n\nEnter the Number to find: ");
             scanf("%d", &search);
             binarySearchi(arri,first, last, middle, search);
-            printf("\nDone :D ");
             }
         else{
             char arrc[s];
@@ -273,29 +273,36 @@ int main()
             printf("\n\nAfter the array of characters is sorted:\n\n");
             PrintArray_c(arrc, s);
             int first = 0;
-            int last = s - 1;
+            int last = s;
             int middle = (first+last)/2;
             char search;
             printf("\n\nEnter the Character to find: ");
             scanf("%s", &search);
             binarySearch(arrc,first, last, middle, search);
-            printf("\nDone :D ");
+
             }
 
-    }else if(num == 3){
+    }
+
+    else if(num == 3){
         printf("Please insert the size of your elements then insert the elements: \n");
         int size;
         scanf("%d", &size);
         char arr[size];
-        printf("Hey there, Enter your elements: \n");
+
+        printf("Enter your integers/characters one per line: \n");
         for(int i = 0; i < size; i++){
-            scanf("%s", &arr[i]);
+            scanf("%s", arr+i);
         }
+
         printf("\nSorted array: ");
+
         bubblesort(arr, size);
+
         for(int k = 0; k < size; k++){
-            printf("%c", arr[k]);
+            printf("%c", arr[k+1]);
         }
+
         int first = 0;
         int last = size;
         int middle = (first+last)/2;
@@ -303,6 +310,7 @@ int main()
         printf("\nEnter the Number to find:\n");
         scanf("%s", &search);
         binarySearch(arr,first, last, middle, search);
-        printf("\nDone :D ");
+
+
     }
 }
